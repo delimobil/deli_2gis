@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+    }
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat-resources:1.2.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6"
+
+    api "ru.dgis.sdk:sdk-map:4.3.0"
+
+    implementation project(':deli_location_provider')
+}
